@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner cin =new Scanner(System.in);
+        int[] cost=new int [12];
+        int flag=1;
+        int month=0;
+        for(int i=0;i<12;i++)
+        {
+            cost[i]=cin.nextInt();
+        }
+        int sum=0;
+        int storage=0;
+        for(int i=0;i<12;i++)
+        {
+            sum=sum-cost[i]+300;
+            if (sum<0)
+            {
+                flag=0;
+                month=i;
+                break;
+            }
+            storage=sum/100+storage;
+            sum=sum%100;
+        }
+        int ans;
+        if(flag==1)
+        {
+            ans=sum+storage*120;
+            System.out.printf("%d",ans);
+        }
+        else
+        {
+            System.out.printf("%d",-(month+1));
+        }
+    }
+}
