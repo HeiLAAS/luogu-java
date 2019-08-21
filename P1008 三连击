@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void main(String args[]) throws Exception {
+    int i,j,k,a,b,c,d,e,f,q,p,n;
+    int a1,a2,a3;
+    for(i=0;i<=206;i++)
+    {
+        a1=123+i;
+        a2=a1*2;
+        a3=a1*3;
+        a=a1/100;
+        b=a1/10%10;
+        c=a1%10;
+        d=a2/100;
+        e=a2/10%10;
+        f=a2%10;
+        q=a3/100;
+        p=a3/10%10;
+        n=a3%10;
+        if(a+b+c+d+e+f+q+p+n==45&&a*b*c*d*e*f*q*p*n==362880)
+            System.out.printf("%d %d %d\n",a1,a2,a3);
+    }
+    }
+}
