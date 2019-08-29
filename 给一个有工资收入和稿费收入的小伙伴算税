@@ -1,0 +1,17 @@
+//来自https://www.liaoxuefeng.com/wiki/1252599548343744/1260454548196032 
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+      Income[] incomes = new income[]
+        {
+          Salary(7500)
+          gaofee(1000)
+        };
+       public static double totalTax(Income...incomes)
+       {
+          
+       }
+       System.out.println(totalTax())
+    }
+}
