@@ -42,3 +42,12 @@ class Salary extends income
         return income*0.2;
     }
 }
+class gaofee 
+{
+    super(income);
+    @Override
+    public double getTax()
+    {
+        return income*0.3;
+    }
+}
