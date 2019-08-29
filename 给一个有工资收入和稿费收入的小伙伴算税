@@ -1,24 +1,24 @@
 //来自https://www.liaoxuefeng.com/wiki/1252599548343744/1260454548196032 
-public class Main 
+public class Main
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
-      Income[] incomes = new income[]
+        Income[] incomes = new income[]
+                {
+                        income(3000),
+                        Salary(7500),
+                        gaofee(1000),
+                };
+        public static double totalTax(Income...incomes)
         {
-          income(3000)
-          Salary(7500)
-          gaofee(1000)
-        };
-       public static double totalTax(Income...incomes)
-       {
-          double total = 0;
-          for(Income income:incomes)
-          {
+            double total = 0;
+            for(Income income:incomes)
+            {
                 total = total+income.getTax();
-          }
-          return total;
-       }
-       System.out.println(totalTax(incomes))
+            }
+            return total;
+        }
+        System.out.println(totalTax(incomes))
     }
 }
 class Income
@@ -33,7 +33,7 @@ class Income
         return income*0.1;
     }
 }
-class Salary extends income
+class Salary extends Income
 {
     public Salary(int income)
     {
@@ -45,7 +45,7 @@ class Salary extends income
         return income*0.2;
     }
 }
-class gaofee 
+class gaofee extends Income
 {
     public gaofee(int income)
     {
