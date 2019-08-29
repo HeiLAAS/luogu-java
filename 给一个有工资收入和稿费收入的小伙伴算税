@@ -5,13 +5,40 @@ public class Main
     {
       Income[] incomes = new income[]
         {
+          income(3000)
           Salary(7500)
           gaofee(1000)
         };
        public static double totalTax(Income...incomes)
        {
-          
+          double total = 0;
+          for(Income income:incomes)
+          {
+                total = total+income.getTax();
+          }
+          return total;
        }
        System.out.println(totalTax())
+    }
+}
+class Income
+{
+    protected int income;
+    public void income(int income)
+    {
+        this.income = income;
+    }
+    public double getTax()
+    {
+        return income*0.1;
+    }
+}
+class Salary extends income
+{
+    super(income);
+    @Override
+    public double getTax()
+    {
+        return income*0.2;
     }
 }
