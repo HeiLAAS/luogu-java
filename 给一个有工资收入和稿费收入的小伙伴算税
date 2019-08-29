@@ -18,7 +18,7 @@ public class Main
           }
           return total;
        }
-       System.out.println(totalTax())
+       System.out.println(totalTax(incomes))
     }
 }
 class Income
@@ -35,7 +35,10 @@ class Income
 }
 class Salary extends income
 {
-    super(income);
+    public Salary(int income)
+    {
+        super(income);
+    }
     @Override
     public double getTax()
     {
@@ -44,7 +47,10 @@ class Salary extends income
 }
 class gaofee 
 {
-    super(income);
+    public gaofee(int income)
+    {
+        super(income);
+    }
     @Override
     public double getTax()
     {
