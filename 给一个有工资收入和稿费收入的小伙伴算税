@@ -3,28 +3,28 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Income[] incomes = new income[]
+        Income[] incomes = new Income[]
                 {
-                        income(3000),
-                        Salary(7500),
-                        gaofee(1000),
+                        new Income(3000),
+                        new Salary(7500),
+                        new Gaofee(1000),
                 };
-        public static double totalTax(Income...incomes)
+        System.out.println(totalTax(incomes));
+    }
+    public static double totalTax(Income...incomes)
+    {
+        double total = 0;
+        for(Income income:incomes)
         {
-            double total = 0;
-            for(Income income:incomes)
-            {
-                total = total+income.getTax();
-            }
-            return total;
+            total = total+income.getTax();
         }
-        System.out.println(totalTax(incomes))
+        return total;
     }
 }
 class Income
 {
     protected int income;
-    public void income(int income)
+    public Income(int income)
     {
         this.income = income;
     }
@@ -45,9 +45,9 @@ class Salary extends Income
         return income*0.2;
     }
 }
-class gaofee extends Income
+class Gaofee extends Income
 {
-    public gaofee(int income)
+    public Gaofee(int income)
     {
         super(income);
     }
